@@ -12,5 +12,10 @@ pipeline{
 				sh 'mvn test'
 			}
 		}
+		stage('Build'){
+			steps{
+				sh ' ./mvnw install dockerfile:build'
+			}
+		}
 	}
 }
