@@ -15,7 +15,7 @@ public class ListManager {
 		this.items.add(item);
 	}
 	public void removeItem(String item) {
-		//this.items.remove(item);
+		this.items.remove(item);
 	}
 	public List<String> getItems(){
 		return this.items;
