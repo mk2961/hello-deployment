@@ -11,6 +11,16 @@ pipeline {
 				sh 'mvn test'
 			}
 		}
+		stage('Build') {
+			steps {
+			 	sh 'mvn install dockerfile:build'
+			}
+		}
+		stage('Publish'){
+			steps{
+				sh 'docker push micknapp79/hello-deployment:latest'
+			}	
+		}
 		
 	}
 }
