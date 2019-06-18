@@ -13,14 +13,9 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-			 	sh 'mvn install dockerfile:build'
+			 	sh 'mvn install dockerfile:build -Dpushimage'
 			}
 		}
-		stage('Publish'){
-			steps{
-				sh 'docker push micknapp79/hello-deployment:latest'
-			}	
-		}
-		
+				
 	}
 }
