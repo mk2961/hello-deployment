@@ -14,7 +14,7 @@ pipeline{
 		}
 		stage('Build'){
 			steps{
-				sh ' ./mvnw install dockerfile:build'
+				sh ' ./mvn install dockerfile:build'
 			}
 		}
 	}
