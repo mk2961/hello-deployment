@@ -7,15 +7,16 @@ pipeline{
 		}	
 	}
 	stages {
+	stage('Build'){
+			steps{
+				sh 'mvn install dockerfile:build'
+			}
+		}
 		stage('Test'){
 			steps{
 				sh 'mvn test'
 			}
 		}
-		stage('Build'){
-			steps{
-				sh 'mvn install dockerfile:build'
-			}
-		}
+		
 	}
 }
